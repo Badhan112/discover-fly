@@ -5,7 +5,6 @@ function increase(numberOfTicket){
 }
 
 
-
 //to decrease Input value
 function decrease(numberOfTicket){
     //Prevent the value become negative because, Number of Ticket never be a negative value
@@ -50,6 +49,26 @@ function addEventHandler(btnId, inputId, purpose){
     });
 }
 
+
+// to add Event Listener to the Book Now Button
+function addBookBtnEventHandler(btnId){
+    document.getElementById(btnId).addEventListener("click", function(){
+        if(firstClassTicket == 0 && economyTicket == 0){
+            alert("Select at least One Ticket");
+        }
+        else{
+            document.getElementById("ticket-confirmation-area").style.display = "flex";
+            document.getElementById("ticket-booking-area").style.display = "none";
+            document.getElementById("confirm-total-cost").innerText = '$' + totalCost;
+            document.getElementById("confirm-firstClass-totalTicket").innerText = firstClassTicket;
+            document.getElementById("confirm-firstClass-totalCost").innerText = '$' + firstClassCost;
+            document.getElementById("confirm-economy-totalTicket").innerText = economyTicket;
+            document.getElementById("confirm-economy-totalCost").innerText = '$' + economyCost;
+            document.getElementById("confirm-total-vat").innerText = '$' + vat;
+        }
+    });
+}
+
 // add event handler to plus button of first class ticket
 addEventHandler("firstClass-plusBtn", "firstClass-numberOfTicket", increase);
 
@@ -61,3 +80,6 @@ addEventHandler("economy-plusBtn", "economy-numberOfTicket", increase);
 
 //add event handler to minus button of economy ticket
 addEventHandler("economy-minusBtn", "economy-numberOfTicket", decrease);
+
+//add event handler to the Book Now button
+addBookBtnEventHandler("bookNow-Btn");

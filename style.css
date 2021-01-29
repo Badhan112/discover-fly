@@ -10,7 +10,7 @@ body{
     background:url("images/bg.png");
     background-repeat: no-repeat;
     background-position: center center;
-    background-attachment: scroll;
+    background-attachment: fixed;
     background-size: cover;
 }
 
@@ -131,3 +131,29 @@ nav ul li a:hover, a.active{
     display: flex;
     justify-content: space-between;
 }
+
+#ticket-confirmation-area{
+    display: none;
+    justify-content: center;
+    margin-top: 50px;
+}
+.confirm-message{
+    background-color: #e6e6e6;
+    width: max-content;
+    padding: 30px;
+    border-radius: 5px;
+}
+.ticket-info{
+    background-color: white;
+    margin-top: 30px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-content: center;
+    border-radius: 10px;
+}
+.text-muted{
+    color: rgb(190, 190, 190);
+}
+
