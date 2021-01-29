@@ -60,17 +60,28 @@ nav ul li a:hover, a.active{
 .f-class{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
 }
 .inp-width{
     min-width: 300px;
 }
 .plus-minus-btn{
+    display: flex;
+    align-items: center;
+}
+.plus-minus-btn > button{
     color: #3352F2;
     font-size: 30px;
-    padding: 2px;
-    margin-top: 10px;
-    word-spacing: 20px;
+    padding: 2px 7px;
+    margin: 10px;
+    border: none;
+    background-color: #F3F5FF;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.plus-minus-btn > button:hover{
+    background-color: teal;
+    color: white;
 }
 .booking-form  .calculations{
     margin: 10px 0;
