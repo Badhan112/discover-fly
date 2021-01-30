@@ -126,6 +126,7 @@ nav ul li a:hover, a.active{
     color: #fff;
     font-weight: 500;
     background-color:  #3352F2;
+    cursor: pointer;
 }
 .amount{
     display: flex;
@@ -138,7 +139,7 @@ nav ul li a:hover, a.active{
     margin-top: 50px;
 }
 .confirm-message{
-    background-color: #e6e6e6;
+    background-color: rgba(230, 230, 230, 0.5);
     width: max-content;
     padding: 30px;
     border-radius: 5px;

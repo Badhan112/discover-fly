@@ -50,7 +50,7 @@ function addEventHandler(btnId, inputId, isIncrease){
                 numberOfTicket--;
             }
         }
-        
+
         document.getElementById(inputId).value = numberOfTicket;
         updateCost();
     });
@@ -73,6 +73,9 @@ function addBookBtnEventHandler(btnId){
             setInnerText("confirm-economy-totalTicket", economyTicket);
             setInnerText("confirm-economy-totalCost", economyCost);
             setInnerText("confirm-total-vat", vat);
+
+            document.getElementById("firstClass-numberOfTicket").value = 0;
+            document.getElementById("economy-numberOfTicket").value = 0;
         }
     });
 }
