@@ -1,20 +1,3 @@
-//to increase Input value
-function increase(numberOfTicket){
-    numberOfTicket++;
-    return numberOfTicket;
-}
-
-
-//to decrease Input value
-function decrease(numberOfTicket){
-    //Prevent the value become negative. because, Number of Ticket never be a negative value
-    if(numberOfTicket > 0){
-        numberOfTicket--;
-    }
-    return numberOfTicket;
-}
-
-
 //to get value from Input Element
 function getValue(inputId){
     const value = parseInt(document.getElementById(inputId).value);
@@ -54,10 +37,20 @@ function updateCost(){
 
 
 // Function to add Event Listener to plus & minus Button
-function addEventHandler(btnId, inputId, purpose){
+function addEventHandler(btnId, inputId, isIncrease){
     document.getElementById(btnId).addEventListener("click", function(){
         let numberOfTicket = getValue(inputId);
-        numberOfTicket = purpose(numberOfTicket);
+
+        if(isIncrease == true){
+            numberOfTicket++;
+        }
+        else{
+            //Prevent the value become negative. because, Number of Ticket never be a negative value
+            if(numberOfTicket > 0){
+                numberOfTicket--;
+            }
+        }
+        
         document.getElementById(inputId).value = numberOfTicket;
         updateCost();
     });
@@ -85,16 +78,16 @@ function addBookBtnEventHandler(btnId){
 }
 
 // add event handler to plus button of first class ticket
-addEventHandler("firstClass-plusBtn", "firstClass-numberOfTicket", increase);
+addEventHandler("firstClass-plusBtn", "firstClass-numberOfTicket", true);
 
 //add event handler to minus button of first class ticket
-addEventHandler("firstClass-minusBtn", "firstClass-numberOfTicket", decrease);
+addEventHandler("firstClass-minusBtn", "firstClass-numberOfTicket", false);
 
 // add event handler to plus button of economy ticket
-addEventHandler("economy-plusBtn", "economy-numberOfTicket", increase);
+addEventHandler("economy-plusBtn", "economy-numberOfTicket", true);
 
 //add event handler to minus button of economy ticket
-addEventHandler("economy-minusBtn", "economy-numberOfTicket", decrease);
+addEventHandler("economy-minusBtn", "economy-numberOfTicket", false);
 
 //add event handler to the Book Now button
 addBookBtnEventHandler("bookNow-Btn");
